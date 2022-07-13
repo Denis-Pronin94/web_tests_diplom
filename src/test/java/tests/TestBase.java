@@ -7,7 +7,6 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
@@ -20,6 +19,7 @@ public class TestBase {
         String browserName = String.valueOf(config.browser());
         String browserVersion = config.version();
         String browserResolution = config.resolution();
+        String selenoidUrl = System.getProperty("selenoidServer");
 
         Configuration.browser = browserName;
         Configuration.browserVersion = browserVersion;
@@ -27,11 +27,10 @@ public class TestBase {
         Configuration.browserSize = browserResolution;
 
         if (config.remote()) {
-            String selenoidLogin = config.selenoidLogin(),
-                    selenoidPassword = config.selenoidPassword();
+            String Login = config.login(),
+                   Password = config.password();
 
-            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-                    selenoidLogin, selenoidPassword);
+            Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoidUrl;
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
@@ -42,7 +41,7 @@ public class TestBase {
         Attach.attachAsText("Browser: ", browserName);
         Attach.attachAsText("Version: ", browserVersion);
         Attach.attachAsText("Remote: ", String.valueOf(config.remote()));
-        Attach.attachAsText("Login: ", config.selenoidLogin());
+        Attach.attachAsText("Login: ", config.login());
     }
 
     @AfterEach
