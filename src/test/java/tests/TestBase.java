@@ -19,7 +19,6 @@ public class TestBase {
         String browserName = String.valueOf(config.browser());
         String browserVersion = config.version();
         String browserResolution = config.resolution();
-        String selenoidUrl = System.getProperty("selenoidServer");
 
         Configuration.browser = browserName;
         Configuration.browserVersion = browserVersion;
@@ -30,7 +29,8 @@ public class TestBase {
             String Login = config.login(),
                    Password = config.password();
 
-            Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoidUrl;
+            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
+                    Login, Password);
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
