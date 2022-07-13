@@ -13,7 +13,7 @@ public interface CredentialsConfig extends Config {
     @DefaultValue("100.0")
     String version();
 
-    @DefaultValue("https://vkusvill.ru")
+    @DefaultValue("https://tprs.ru")
     String baseUrl();
 
     @DefaultValue("1920x1080")
