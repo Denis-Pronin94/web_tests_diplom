@@ -7,6 +7,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
@@ -26,11 +27,11 @@ public class TestBase {
         Configuration.browserSize = browserResolution;
 
         if (config.remote()) {
-            String Login = config.login(),
-                   Password = config.password();
+            String selenoidLogin = config.login(),
+                    selenoidPassword = config.password();
 
             Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-                    Login, Password);
+                    selenoidLogin, selenoidPassword);
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
