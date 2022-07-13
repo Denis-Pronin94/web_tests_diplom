@@ -1,7 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-import config.CredentialsConfig;
+import config.TestsConfig;
 import helps.Attach;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -13,9 +13,11 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
+    MainPage mainPage = new MainPage();
+
     @BeforeAll
     static void setUp() {
-        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+        TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
         String browserName = String.valueOf(config.browser());
         String browserVersion = config.version();
@@ -27,8 +29,8 @@ public class TestBase {
         Configuration.browserSize = browserResolution;
 
         if (config.remote()) {
-            String selenoidLogin = config.login(),
-                    selenoidPassword = config.password();
+            String selenoidLogin = config.selenoidLogin(),
+                    selenoidPassword = config.selenoidPassword();
 
             Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
                     selenoidLogin, selenoidPassword);
@@ -42,7 +44,7 @@ public class TestBase {
         Attach.attachAsText("Browser: ", browserName);
         Attach.attachAsText("Version: ", browserVersion);
         Attach.attachAsText("Remote: ", String.valueOf(config.remote()));
-        Attach.attachAsText("Login: ", config.login());
+        Attach.attachAsText("Login: ", config.selenoidLogin());
     }
 
     @AfterEach
