@@ -25,6 +25,7 @@
 <img width="8%" title="Jenkins" src="images/logo/Jenkins.svg">
 <img width="8%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="8%" title="Allure Report" src="images/logo/Allure_Report.svg">
+<img width="8%" title="Allure Report" src="images/logo/AllureTestOps.svg">
 <img width="8%" title="Telegram" src="images/logo/Telegram.svg">
 </p>
 
