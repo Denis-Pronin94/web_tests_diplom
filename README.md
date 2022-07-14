@@ -100,7 +100,7 @@ gradle clean test
 
 <a name="report-Allure-отчет"></a>
 ### :report:  Allure Reports отчет
-### <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/Test-vacancy/)
+### <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/web_tests_diplom/)
 <p align="center">
   <img src="images/screens/AllureTestOps.png" alt="job" width="900">
 </p>
