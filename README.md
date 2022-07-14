@@ -102,11 +102,20 @@ gradle clean test
 ### :report:  Allure Reports отчет
 ### <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/web_tests_diplom/)
 <p align="center">
-  <img src="images/screens/AllureTestOps.png" alt="job" width="900">
+  <img src="images/screens/AllureReport.png" alt="job" width="900">
 </p>
 
 <p align="center">
-  <img src="images/screens/AllureTestOps2.png" alt="job" width="900">
+  <img src="images/screens/AllureReport2.png" alt="job" width="900">
+</p>
+
+### <img width="4%" title="Allure TestOPS" src="images/logo/AllureTestOps.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/11706)
+<p align="center">
+  <img src="images/screens/AllureTestOps.png" alt="job" width="800">
+</p>
+
+<p align="center">
+  <img src="images/screens/AllureTestOps2.png" alt="job" width="800">
 </p>
 
 <a name="telegram-Уведомление-в-Telegram-при-помощи-бота"></a>
