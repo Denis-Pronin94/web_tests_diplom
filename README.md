@@ -9,7 +9,7 @@
 - [Реализованные проверки](#control-Реализованные-проверки)
 - [Сборка в Jenkins](#jenkins-Jenkins-job)
 - [Allure отчет](#report-Allure-отчет)
-- [Интеграция с Allure TestOps](#Allure TestOPS)
+- [Интеграция с Allure TestOps](#Allure-TestOPS)
 - [Отчет в Telegram](#telegram-Уведомление-в-Telegram-при-помощи-бота)
 - [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
@@ -110,6 +110,7 @@ gradle clean test
   <img src="images/screens/AllureReport2.png" alt="job" width="900">
 </p>
 
+<a name="Allure-TestOPS"></a>
 ### <img width="4%" title="Allure TestOPS" src="images/logo/AllureTestOps.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/14320)
 <p align="center">
   <img src="images/screens/AllureTestOps.png" alt="job" width="800">
