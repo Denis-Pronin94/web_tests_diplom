@@ -70,7 +70,7 @@
 
 <a name="jenkins-Jenkins-job"></a>
 ###   Сборка в Jenkins
-### <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/Test-vacancy/)
+### <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/web_tests_diplom/)
 *Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать с параметрами*</strong></code> и указать значения параметров.*
 
 <p align="center">
