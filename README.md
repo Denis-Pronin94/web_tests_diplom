@@ -8,7 +8,6 @@
 - [Технологии и инструменты](#techno-технологии-и-инструменты)
 - [Реализованные проверки](#control-Реализованные-проверки)
 - [Сборка в Jenkins](#jenkins-Jenkins-job)
-- [Запуск из терминала](#terminal-Запуск-тестов-из-терминала)
 - [Allure отчет](#report-Allure-отчет)
 - [Отчет в Telegram](#telegram-Уведомление-в-Telegram-при-помощи-бота)
 - [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
@@ -97,12 +96,6 @@ gradle clean test
 >
 > <code>SELENOID_SERVER</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 >
-
-<a name="terminal-Запуск-тестов-из-терминала"></a>
-### :terminal: Запуск из терминала
-```bash
-gradle clean test
-```
 
 <a name="report-Allure-отчет"></a>
 ### :report:  Allure Reports отчет
