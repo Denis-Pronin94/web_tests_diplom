@@ -121,7 +121,7 @@ gradle clean test
 </p>
 
 <a name="telegram-Уведомление-в-Telegram-при-помощи-бота"></a>
-### :telegram: Отчет в Telegram
+### <img width="6%" title="Jenkins" src="images/logo/Telegram.svg"> Отчет в Telegram
 
 <p align="center">
   <img src="images/screens/telegram.png" alt="job" width="600">
