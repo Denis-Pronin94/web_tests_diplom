@@ -109,7 +109,7 @@ gradle clean test
   <img src="images/screens/AllureReport2.png" alt="job" width="900">
 </p>
 
-### <img width="4%" title="Allure TestOPS" src="images/logo/AllureTestOps.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/11706)
+### <img width="4%" title="Allure TestOPS" src="images/logo/AllureTestOps.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/14320)
 <p align="center">
   <img src="images/screens/AllureTestOps.png" alt="job" width="800">
 </p>
