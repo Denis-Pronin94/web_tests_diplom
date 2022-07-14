@@ -1,8 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import config.TestsConfig;
 import helps.Attach;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,49 +12,40 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestBase {
 
-    MainPage mainPage = new MainPage();
+    static String browser = System.getProperty("browser");
+    static String browserSize = System.getProperty("browserSize");
+    static String selenoidUrl = System.getProperty("selenoidServer");
+    static String browserVersion = System.getProperty("browserVersion");
 
     @BeforeAll
     static void setUp() {
-        TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        String browserName = String.valueOf(config.browser());
-        String browserVersion = config.version();
-        String browserResolution = config.resolution();
+        TestsConfig config = ConfigFactory.create(TestsConfig.class);
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.browser = browserName;
+        Configuration.browser = browser;
+        Configuration.browserSize = browserSize;
         Configuration.browserVersion = browserVersion;
-        Configuration.baseUrl = config.baseUrl();
-        Configuration.browserSize = browserResolution;
+        Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoidUrl;
 
-        if (config.remote()) {
-            String selenoidLogin = config.selenoidLogin(),
-                    selenoidPassword = config.selenoidPassword();
-
-            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-                    selenoidLogin, selenoidPassword);
-
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
-        }
-
-        Attach.attachAsText("Browser: ", browserName);
-        Attach.attachAsText("Version: ", browserVersion);
-        Attach.attachAsText("Remote: ", String.valueOf(config.remote()));
-        Attach.attachAsText("Login: ", config.selenoidLogin());
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterEach
     void addAttachments() {
+
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        sleep(5000);
         closeWebDriver();
     }
 }
