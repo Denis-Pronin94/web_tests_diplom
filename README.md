@@ -14,7 +14,7 @@
 - [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
 <a name="techno-технологии-и-инструменты"></a>
-###  Технологический стек
+###  Технологии и инструменты
 
 <p align="center">
 <img width="8%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
