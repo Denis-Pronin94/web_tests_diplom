@@ -18,7 +18,7 @@ public class CheckElementsUITests extends TestBase {
             mainPage.openMainPage());
 
         step("Проверить заголовок", () ->
-            mainPage.textHeadings("Пионеры в своём деле"));
+            mainPage.checkHeader("Пионеры в своём деле"));
     }
 
     @Test
