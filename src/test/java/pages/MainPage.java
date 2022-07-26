@@ -31,39 +31,39 @@ public class MainPage {
         textHeading.shouldHave(text(text));
     }
 
-    public void mainProjects() {
+    public void openMainProjects() {
         mainProjects.click();
     }
 
-    public void mainContacts() {
+    public void clickMainContacts() {
         mainContacts.click();
     }
 
-    public void mainVacancy() {
+    public void clickMainVacancy() {
         mainVacancy.click();
     }
 
-    public void mainDecisions() {
+    public void clickMainDecisions() {
         mainDecisions.click();
     }
 
-    public void textSearch(String text) {
+    public void checkHeader(String text) {
         textSearch.shouldHave(text(text));
     }
 
-    public void offlineClick() {
+    public void clickOfflineClick() {
         offlineClick.click();
     }
 
-    public void projectsOfflineName(String text) {
+    public void checkProjectsOfflineName(String text) {
         projectsOfflineName.shouldHave(text(text));
     }
 
-    public void address(String text) {
+    public void checkAddress(String text) {
         address.shouldHave(text(text));
     }
 
-    public void resumeButton() {
+    public void clickResumeButton() {
         resumeRutton.click();
     }
 
