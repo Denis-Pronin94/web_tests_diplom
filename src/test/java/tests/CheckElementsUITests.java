@@ -41,7 +41,7 @@ public class CheckElementsUITests extends TestBase {
             mainPage.clickMainDecisions());
 
         step("Проверить заголовка 'Расчетные системы'", () ->
-            mainPage.checkHeader("Расчетные системы"));
+            mainPage.checkHeader1("Расчетные системы"));
     }
 
     @Test

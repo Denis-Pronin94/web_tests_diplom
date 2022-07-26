@@ -27,7 +27,7 @@ public class MainPage {
         textSearch.shouldHave(text("Расчетные системы"));
     }
 
-    public void textHeadings(String text) {
+    public void checkHeader(String text) {
         textHeading.shouldHave(text(text));
     }
 
@@ -47,7 +47,7 @@ public class MainPage {
         mainDecisions.click();
     }
 
-    public void checkHeader(String text) {
+    public void checkHeader1(String text) {
         textSearch.shouldHave(text(text));
     }
 
