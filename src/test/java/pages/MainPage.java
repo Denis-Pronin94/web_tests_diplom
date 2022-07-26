@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainPage {
 
     private SelenideElement
-
             textHeading = $(".timeline__title"),
             textSearch = $(".page-header__logo"),
             mainProjects = $(".main-nav").$(byText("Проекты")),
